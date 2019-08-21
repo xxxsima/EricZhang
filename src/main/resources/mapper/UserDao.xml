@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 设置为IUserDao接口方法提供sql语句配置 -->
+<mapper namespace="com.zhang.dao.IUserDao">
+
+    <select id="selectUser" resultType="User" parameterType="long">
+        SELECT * FROM z_user WHERE id = #{id}
+    </select>
+    <select id ="findAll" resultType="User">
+        select * from z_user
+    </select>
+
+    <select id="findUserName" resultType="User" parameterType="String">
+    select * from z_user where username=#{username}
+    </select>
+
+    <insert id="InsertUserNameAndPassWord">
+        insert into z_user
+        (email,username,role,mobile,passWord)
+        values
+        (#{email},#{username},#{role},#{mobile},#{password})
+    </insert>
+</mapper>
