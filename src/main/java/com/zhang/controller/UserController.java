@@ -40,7 +40,7 @@ public class UserController {
             modelAndView.setViewName("home/home");
             return modelAndView;
         }
-        modelAndView.setViewName("/WEB-INF/views/defaut/defaut.jsp");
+        modelAndView.setViewName("defaut/defaut");
         return modelAndView;
     }
 

@@ -29,13 +29,8 @@ public class UserServiceImpl implements IUserService {
     public User findUserName(String username, String password) {
         User user=userDao.findUserName(username);
 
-        String password1 = user.getPassword();
+       // String password1 = user.getPassword();
 
-        boolean equals1 = password1.equals(password);
-
-        boolean equals = user.getPassword().equals(password);
-
-        boolean b = user.getPassword() == password;
 
         if (user !=null && user.getPassword().equals(password)) {
             return user;
