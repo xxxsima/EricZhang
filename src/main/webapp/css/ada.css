@@ -1,0 +1,66 @@
+/*
+_____________ADA 常用样式提取__________________
+Date:2018/4/19
+Created & Modified by King
+ */
+
+/*共用样式*/
+.fr{
+    float:right;
+}
+
+.fl{
+    float:left;
+}
+
+
+html,body { height: 100%; width:100% ;margin: 0; padding: 0;
+background-color: white;
+}
+
+/*块样式*/
+.aPanel{
+        /*margin:5px;*/
+        /*background-color:white;*/
+        /*border:solid 0.5px #cccccc;*/
+        /*!*box-shadow:0px 0.5px 0.5px #666666;*!*/
+        /*!*border-radius:5px;*!*/
+		/*padding: 5px;*/
+
+    margin: 5px;
+    background-color: white;
+    border: solid 0.5px #cccccc;
+    box-shadow: 0px 1px 1px 0px #a2a2a2;
+    /*border-radius: 2px;*/
+    /*padding: 5px;*/
+		
+}
+.pointer{
+    cursor: pointer;
+}
+
+	/* 修改layui的样式*/
+.layui-form-pane .layui-input-block {
+	margin-left: 180px;
+}
+.layui-input-block {
+	margin-left: 180px;
+}
+.layui-disabled{
+background-color: #f1f1f1;
+	color: #333 !important;
+}
+
+
+/*easyUI 样式重写*/
+.datagrid-mask-msg{
+	border: #ffffff;
+	background-color: rgba(255,255,255,0.15);
+}
+/* 表格背景颜色白色*/
+.datagrid-toolbar{
+    background-color: #FFFFFF;
+}
+.datagrid-pager{
+    background-color: #FFFFFF;
+}

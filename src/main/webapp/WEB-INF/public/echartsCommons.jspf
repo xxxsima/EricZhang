@@ -1,0 +1,2 @@
+<!-- echart所需文件 -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/echarts/echarts.min.js"></script>

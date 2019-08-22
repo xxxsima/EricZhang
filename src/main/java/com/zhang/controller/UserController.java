@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.List;
-
 
 @Controller
 @RequestMapping("/user")
@@ -21,7 +19,7 @@ public class UserController {
 
     @RequestMapping("/login")
     public String login() {
-        return "index";
+        return "home/index";
     }
 
     @RequestMapping("/findUserName")
@@ -39,10 +37,10 @@ public class UserController {
         if (user !=null) {
            // model.addAttribute("user",user);
                       //modelAndView.addObject("user",user);
-            modelAndView.setViewName("home");
+            modelAndView.setViewName("home/home");
             return modelAndView;
         }
-        modelAndView.setViewName("defaut");
+        modelAndView.setViewName("/WEB-INF/views/defaut/defaut.jsp");
         return modelAndView;
     }
 
@@ -51,7 +49,7 @@ public class UserController {
         ModelAndView mv = new ModelAndView();
         User user = userService.selectUser(1);
         mv.addObject("user", user);
-        mv.setViewName("user");
+        mv.setViewName("user/user");
         return mv;
     }
 }
