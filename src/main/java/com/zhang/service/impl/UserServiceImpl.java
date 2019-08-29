@@ -37,4 +37,14 @@ public class UserServiceImpl implements IUserService {
         }
         return null;
     }
+
+    @Override
+    public List<User> fuzzyQuery(String fuzzy) {
+        return userDao.fuzzyQuery(fuzzy);
+    }
+
+    @Override
+    public User getById(Long id) {
+        return userDao.getById(id);
+    }
 }

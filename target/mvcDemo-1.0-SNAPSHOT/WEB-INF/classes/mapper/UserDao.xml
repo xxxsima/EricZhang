@@ -15,6 +15,19 @@
     select * from z_user where username=#{username}
     </select>
 
+    <select id="fuzzyQuery" parameterType="String" resultType="User">
+        select * from z_user u
+        <if test="_parameter != null and _parameter != ''">
+            where u.username like concat('%',#{fuzzy},'%')
+            or
+            u.role like concat ('%',#{fuzzy},'%')
+        </if>
+
+    </select>
+
+    <select id="getById" parameterType="long" resultType="User">
+     select * from z_user u where u.id=#{id}
+    </select>
     <insert id="InsertUserNameAndPassWord">
         insert into z_user
         (email,username,role,mobile,passWord)

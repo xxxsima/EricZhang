@@ -13,11 +13,11 @@
 <body>
 <h1>欢迎进入主页</h1>
 
-<input  type="button" value="user" onclick="window.location.href='select'">
+<input  type="button" value="user" onclick="window.location.href='userUI'">
+
 <form action="${pageContext.request.contextPath}/user/login">
     <table>
         <tr>
-
             <td><input type="submit" value="退出登录"></td>
         </tr>
     </table>

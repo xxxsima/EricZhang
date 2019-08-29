@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="eric@localhost">
+  <database-model serializer="dbm" dbms="MSSQL" family-id="MSSQL" format-version="4.14">
+    <root id="1">
+      <ServerVersion>11.0.3156</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="ReportServer">
+      <ObjectId>5</ObjectId>
+      <Collation>Latin1_General_CI_AS_KS_WS</Collation>
+    </database>
+    <database id="3" parent="1" name="ReportServerTempDB">
+      <ObjectId>6</ObjectId>
+      <Collation>Latin1_General_CI_AS_KS_WS</Collation>
+    </database>
+    <database id="4" parent="1" name="YFCRM">
+      <ObjectId>8</ObjectId>
+      <Collation>Chinese_PRC_CI_AS</Collation>
+    </database>
+    <database id="5" parent="1" name="eric">
+      <ObjectId>11</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+      <Collation>Chinese_PRC_CI_AS</Collation>
+    </database>
+    <database id="6" parent="1" name="master">
+      <ObjectId>1</ObjectId>
+      <Collation>Chinese_PRC_CI_AS</Collation>
+    </database>
+    <database id="7" parent="1" name="model">
+      <ObjectId>3</ObjectId>
+      <Collation>Chinese_PRC_CI_AS</Collation>
+    </database>
+    <database id="8" parent="1" name="msdb">
+      <ObjectId>4</ObjectId>
+      <Collation>Chinese_PRC_CI_AS</Collation>
+    </database>
+    <database id="9" parent="1" name="new_database">
+      <ObjectId>10</ObjectId>
+      <Collation>Chinese_PRC_CI_AS</Collation>
+    </database>
+    <database id="10" parent="1" name="omsTry">
+      <ObjectId>9</ObjectId>
+      <Collation>Chinese_PRC_CI_AS</Collation>
+    </database>
+    <database id="11" parent="1" name="tempdb">
+      <ObjectId>2</ObjectId>
+      <Collation>Chinese_PRC_CI_AS</Collation>
+    </database>
+    <database id="12" parent="1" name="yps">
+      <ObjectId>7</ObjectId>
+      <Collation>Chinese_PRC_CI_AS</Collation>
+    </database>
+    <schema id="13" parent="5" name="INFORMATION_SCHEMA">
+      <ObjectId>3</ObjectId>
+    </schema>
+    <schema id="14" parent="5" name="db_accessadmin">
+      <ObjectId>16385</ObjectId>
+    </schema>
+    <schema id="15" parent="5" name="db_backupoperator">
+      <ObjectId>16389</ObjectId>
+    </schema>
+    <schema id="16" parent="5" name="db_datareader">
+      <ObjectId>16390</ObjectId>
+    </schema>
+    <schema id="17" parent="5" name="db_datawriter">
+      <ObjectId>16391</ObjectId>
+    </schema>
+    <schema id="18" parent="5" name="db_ddladmin">
+      <ObjectId>16387</ObjectId>
+    </schema>
+    <schema id="19" parent="5" name="db_denydatareader">
+      <ObjectId>16392</ObjectId>
+    </schema>
+    <schema id="20" parent="5" name="db_denydatawriter">
+      <ObjectId>16393</ObjectId>
+    </schema>
+    <schema id="21" parent="5" name="db_owner">
+      <ObjectId>16384</ObjectId>
+    </schema>
+    <schema id="22" parent="5" name="db_securityadmin">
+      <ObjectId>16386</ObjectId>
+    </schema>
+    <schema id="23" parent="5" name="dbo">
+      <ObjectId>1</ObjectId>
+      <IntrospectionTimestamp>2019-08-29.07:51:59</IntrospectionTimestamp>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="24" parent="5" name="guest">
+      <ObjectId>2</ObjectId>
+    </schema>
+    <schema id="25" parent="5" name="sys">
+      <ObjectId>4</ObjectId>
+    </schema>
+    <table id="26" parent="23" name="customer">
+      <ObjectId>245575913</ObjectId>
+      <CreatedTimestamp>2019-08-05.06:04:38.893</CreatedTimestamp>
+      <ModifiedTimestamp>2019-08-05.06:04:38.893</ModifiedTimestamp>
+    </table>
+    <table id="27" parent="23" name="kendo">
+      <ObjectId>277576027</ObjectId>
+      <CreatedTimestamp>2019-08-06.07:33:44.027</CreatedTimestamp>
+      <ModifiedTimestamp>2019-08-06.07:33:44.027</ModifiedTimestamp>
+    </table>
+    <table id="28" parent="23" name="z_class">
+      <ObjectId>421576540</ObjectId>
+      <CreatedTimestamp>2019-08-07.22:19:26.497</CreatedTimestamp>
+      <ModifiedTimestamp>2019-08-07.22:19:26.497</ModifiedTimestamp>
+    </table>
+    <table id="29" parent="23" name="z_grade">
+      <ObjectId>501576825</ObjectId>
+      <CreatedTimestamp>2019-08-07.22:35:15.243</CreatedTimestamp>
+      <ModifiedTimestamp>2019-08-07.22:35:15.243</ModifiedTimestamp>
+    </table>
+    <table id="30" parent="23" name="z_student">
+      <ObjectId>453576654</ObjectId>
+      <CreatedTimestamp>2019-08-07.22:31:28.287</CreatedTimestamp>
+      <ModifiedTimestamp>2019-08-07.22:31:28.287</ModifiedTimestamp>
+    </table>
+    <table id="31" parent="23" name="z_teacher">
+      <ObjectId>373576369</ObjectId>
+      <CreatedTimestamp>2019-08-07.22:15:07.480</CreatedTimestamp>
+      <ModifiedTimestamp>2019-08-07.22:15:07.480</ModifiedTimestamp>
+    </table>
+    <table id="32" parent="23" name="z_user">
+      <ObjectId>629577281</ObjectId>
+      <CreatedTimestamp>2019-08-20.07:08:18.570</CreatedTimestamp>
+      <ModifiedTimestamp>2019-08-20.07:08:18.570</ModifiedTimestamp>
+    </table>
+    <column id="33" parent="26" name="id">
+      <Position>1</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="34" parent="26" name="name">
+      <Position>2</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="26" name="sex">
+      <Position>3</Position>
+      <DataType>nvarchar(10 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="26" name="age">
+      <Position>4</Position>
+      <DataType>nvarchar(10 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="26" name="phone">
+      <Position>5</Position>
+      <DataType>nvarchar(20 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="38" parent="26" name="PK__customer__3213E83F7DFD32D1">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="39" parent="26" name="PK__customer__3213E83F7DFD32D1">
+      <ObjectId>261575970</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-08-05.06:04:38.910</CreatedTimestamp>
+      <ModifiedTimestamp>2019-08-05.06:04:38.910</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK__customer__3213E83F7DFD32D1</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="40" parent="27" name="id">
+      <Position>1</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="27" name="name">
+      <Position>2</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+    </column>
+    <column id="42" parent="27" name="age">
+      <Position>3</Position>
+      <DataType>bigint|0s</DataType>
+    </column>
+    <index id="43" parent="27" name="PK__kendo__3213E83F10B3E25A">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="44" parent="27" name="PK__kendo__3213E83F10B3E25A">
+      <ObjectId>293576084</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-08-06.07:33:44.060</CreatedTimestamp>
+      <ModifiedTimestamp>2019-08-06.07:33:44.060</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK__kendo__3213E83F10B3E25A</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="45" parent="28" name="id">
+      <Position>1</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="28" name="name">
+      <Position>2</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="28" name="teacherId">
+      <Position>3</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="28" name="studentId">
+      <Position>4</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="49" parent="28" name="PK__z_class__3213E83F3C9135BB">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="50" parent="28" name="PK__z_class__3213E83F3C9135BB">
+      <ObjectId>437576597</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-08-07.22:19:26.497</CreatedTimestamp>
+      <ModifiedTimestamp>2019-08-07.22:19:26.497</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK__z_class__3213E83F3C9135BB</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="51" parent="29" name="id">
+      <Position>1</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="52" parent="29" name="studentId">
+      <Position>2</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="53" parent="29" name="chinese">
+      <Position>3</Position>
+      <DataType>nvarchar(20 char)|0s</DataType>
+    </column>
+    <column id="54" parent="29" name="english">
+      <Position>4</Position>
+      <DataType>nvarchar(20 char)|0s</DataType>
+    </column>
+    <column id="55" parent="29" name="math">
+      <Position>5</Position>
+      <DataType>nvarchar(20 char)|0s</DataType>
+    </column>
+    <index id="56" parent="29" name="PK__z_grade__3213E83FAFC9D958">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="57" parent="29" name="PK__z_grade__3213E83FAFC9D958">
+      <ObjectId>517576882</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-08-07.22:35:15.247</CreatedTimestamp>
+      <ModifiedTimestamp>2019-08-07.22:35:15.247</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK__z_grade__3213E83FAFC9D958</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="58" parent="30" name="id">
+      <Position>1</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="59" parent="30" name="teacherId">
+      <Position>2</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+    </column>
+    <column id="60" parent="30" name="name">
+      <Position>3</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="61" parent="30" name="sex">
+      <Position>4</Position>
+      <DataType>nvarchar(10 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="62" parent="30" name="age">
+      <Position>5</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="63" parent="30" name="phone">
+      <Position>6</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="64" parent="30" name="PK__z_studen__3213E83F19666A92">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="65" parent="30" name="PK__z_studen__3213E83F19666A92">
+      <ObjectId>469576711</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-08-07.22:31:28.293</CreatedTimestamp>
+      <ModifiedTimestamp>2019-08-07.22:31:28.293</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK__z_studen__3213E83F19666A92</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="66" parent="31" name="id">
+      <Position>1</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="67" parent="31" name="name">
+      <Position>2</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="68" parent="31" name="sex">
+      <Position>3</Position>
+      <DataType>nvarchar(10 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="69" parent="31" name="age">
+      <Position>4</Position>
+      <DataType>nvarchar(10 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="70" parent="31" name="position">
+      <Position>5</Position>
+      <DataType>nvarchar(20 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="71" parent="31" name="course">
+      <Position>6</Position>
+      <DataType>nvarchar(20 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="72" parent="31" name="phone">
+      <Position>7</Position>
+      <DataType>nvarchar(11 char)|0s</DataType>
+    </column>
+    <index id="73" parent="31" name="PK__z_teache__3213E83F210FE906">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="74" parent="31" name="PK__z_teache__3213E83F210FE906">
+      <ObjectId>389576426</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-08-07.22:15:07.510</CreatedTimestamp>
+      <ModifiedTimestamp>2019-08-07.22:15:07.510</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK__z_teache__3213E83F210FE906</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="75" parent="32" name="id">
+      <Position>1</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="76" parent="32" name="email">
+      <Position>2</Position>
+      <DataType>nvarchar(255 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="77" parent="32" name="username">
+      <Position>3</Position>
+      <DataType>nvarchar(255 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="78" parent="32" name="role">
+      <Position>4</Position>
+      <DataType>nvarchar(255 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="79" parent="32" name="mobile">
+      <Position>5</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="80" parent="32" name="passWord">
+      <Position>6</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="81" parent="32" name="PK__z_user__3213E83F2E6D432A">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="82" parent="32" name="PK__z_user__3213E83F2E6D432A">
+      <ObjectId>645577338</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-08-20.07:08:18.577</CreatedTimestamp>
+      <ModifiedTimestamp>2019-08-20.07:08:18.577</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK__z_user__3213E83F2E6D432A</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

@@ -12,5 +12,12 @@ public interface IUserDao {
 
     User findUserName(String username);
 
-    void  InsertUserNameAndPassWord(@Param("username")String  userName,@Param("password")String password);
+    /*
+    * 注册用户
+    * */
+    //void  InsertUserNameAndPassWord(@Param("username")String  userName,@Param("password")String password);
+   List<User> fuzzyQuery(String fuzzy);
+   User getById(Long id);
+
+
 }
