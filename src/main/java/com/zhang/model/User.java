@@ -2,7 +2,15 @@ package com.zhang.model;
 
 public class User {
 
-    private long id;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    private Long id;
     private String email;
     private String mobile;
     private String username;
@@ -18,13 +26,6 @@ public class User {
 
     private String password;
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getEmail() {
         return email;

@@ -1,8 +1,10 @@
 package com.zhang.service.impl;
 
+import com.zhang.Exception.UserException;
 import com.zhang.dao.IUserDao;
 import com.zhang.dao.IUserDao;
 import com.zhang.model.User;
+import com.zhang.other.message.UserMessage;
 import com.zhang.service.IUserService;
 import com.zhang.service.IUserService;
 import org.springframework.stereotype.Service;
@@ -46,5 +48,31 @@ public class UserServiceImpl implements IUserService {
     @Override
     public User getById(Long id) {
         return userDao.getById(id);
+    }
+
+    @Override
+    public void insert(User entity) {
+        /*if (entity!=null) {
+            if (entity.getEmail()==null) {
+
+            }
+        }*/
+
+        if (exitContactBy(entity.getUsername())) {
+            throw  new UserException(UserMessage.NAME_VERIFY);
+        }
+        userDao.insert(entity);
+    }
+private boolean exitContactBy(String username) {
+return  userDao.exitContactBy(username).size()>0;
+}
+    @Override
+    public void update(User entity) {
+userDao.update(entity);
+    }
+
+    @Override
+    public void delete(Long id) {
+userDao.delete(id);
     }
 }

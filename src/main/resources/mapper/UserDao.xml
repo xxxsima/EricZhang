@@ -25,13 +25,43 @@
 
     </select>
 
+
+    <select id="exitContactBy" resultType="User">
+        select * from z_user u
+        where u.username=#{username}
+    </select>
+
     <select id="getById" parameterType="long" resultType="User">
      select * from z_user u where u.id=#{id}
     </select>
-    <insert id="InsertUserNameAndPassWord">
+    <insert id="insert" parameterType="User" useGeneratedKeys="true" keyProperty="id">
         insert into z_user
-        (email,username,role,mobile,passWord)
+        (
+        email,
+        username,
+        role,
+        mobile,
+        password
+        )
         values
-        (#{email},#{username},#{role},#{mobile},#{password})
+        (
+        #{email},
+        #{username},
+        #{role},
+        #{mobile},
+        #{password}
+        )
     </insert>
+    <update id="update" parameterType="User">
+        update z_user set
+        email=#{email},
+        username=#{username},
+        role=#{role},
+        mobile=#{mobile},
+        password=#{password}
+        where id=#{id}
+    </update>
+    <delete id="delete" parameterType="Long">
+        delete from z_user where id=#{id}
+    </delete>
 </mapper>

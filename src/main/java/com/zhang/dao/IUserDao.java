@@ -10,7 +10,22 @@ public interface IUserDao {
     User selectUser(long id);
     List<User> findAll();
 
+    List<User> exitContactBy(@Param(value = "username") String username);
+
     User findUserName(String username);
+    /*
+    * insert
+    * */
+    void insert (User entity);
+    /*
+    * update
+    * */
+    void update (User entity);
+
+    /*
+    * delete
+    * */
+    void delete (Long id);
 
     /*
     * 注册用户

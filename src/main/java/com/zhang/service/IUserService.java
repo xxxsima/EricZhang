@@ -11,4 +11,16 @@ public interface IUserService {
       User findUserName(String username,String password);
       List<User> fuzzyQuery(String fuzzy);
       User getById(Long id);
+      /*
+      * insert
+      * */
+      void insert(User entity);
+      /*
+      * update
+      * */
+      void update(User entity);
+      /*
+      * delete
+      * */
+      void delete(Long id);
 }

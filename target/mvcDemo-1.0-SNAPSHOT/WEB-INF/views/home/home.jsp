@@ -13,7 +13,9 @@
 <body>
 <h1>欢迎进入主页</h1>
 
-<input  type="button" value="user" onclick="window.location.href='userUI'">
+<input  type="button" value="user" onclick="window.location.href='/user/userUI'">
+<br>
+<input type="button" value="teacher" onclick="window.location.href='/teacher/teacherUI'">
 
 <form action="${pageContext.request.contextPath}/user/login">
     <table>

@@ -13,16 +13,27 @@
     <title>用户管理</title>
     <%@ include file="/WEB-INF/public/commons.jspf" %>
 </head>
-<body>
+<body class="easyui-layout">
 <table id="dg"></table>
 
 <div id="searchToolbar">
-    <div class="conditions">
-        &nbsp;&nbsp;
-        <input type="text" placeholder="请输入查询信息" id="fuzzyString" style="width:250px;height: 35px;line-height: 35px;"/>
-        &nbsp;
-        <button class="easyui-linkbutton" onclick="searchUserList">查询</button>
-        <button class="btn btn-primary" <%--data-options="selected:true"--%> onclick="userAdd()">新增用户</button>
+    <div class="container-fluid">
+        <div class="row mt-1 mb-1 ">
+            <div class="col-3">
+                <input id="userFuzzyString" class="form-control" type="text"
+                       placeholder="<s:message code="user.placeholder.userFuzzyString"/>">
+            </div>
+            <div class="col-3">
+                <button id="btnSearch" type="button" class="btn btn-primary" onclick="searchUserList()"><i
+                        class="fa fa-search"></i>&nbsp;<s:message
+                        code="search"></s:message></button>
+            </div>
+            <div class="col-6 text-right">
+                <button id="userAdd" type="button" class="btn btn-success " onclick="userAdd()"><i
+                        class="fa fa-plus"></i>&nbsp;<s:message
+                        code="add"></s:message></button>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -153,32 +164,39 @@
         $("#dg").datagrid("load")
     }
 
-    function roleEdit(roleId){
-        // alert("成功进入编辑"+userId)
-        ada.Edit("${pageContext.request.contextPath}/role/editUI?id="+roleId);
-    }
-    //新增用户
-    function roleAdd(roleId){
-        // alert("成功进入编辑"+userId)
-        ada.Edit("${pageContext.request.contextPath}/role/addUI");
-    }
-    function roleDelete(roleId){
-        var url = "${pageContext.request.contextPath}/role/deleteJson";
-        ada.DeleteGridRow("dg",url);
+    function userUpdate(userId){
+        ada.openPopup("修改","${pageContext.request.contextPath}/user/updateUI?id="+userId,
+        function () {
+            window.location.reload()
+        },
+        '800px','600px');
+         }
+    function userDelete(userId){
 
+
+        ada.ajaxDelete("${pageContext.request.contextPath}/user/deleteJson?id="+userId,
+            function () {
+                searchUserList();
+            }
+        );
     }
     function reload(){
         $("#dg").datagrid("reload");
     }
     function userAdd(){
-        console.log('userAdd');
-        layer.msg("userAdd");
+        ada.openPopup("<s:message code="add"/>","${pageContext.request.contextPath}/user/addUI",
+        function () {
+            window.location.reload()
+        },
+            '800px','600px'
+        )
+
     }
     function actionFormatter(value, row, index) {
 
         var action = "";
-        action += '<a href="#"><i class="fa fa-edit" style="cursor:pointer;" onclick="update(' + row.id + ')" title="修改"></i></a> ';
-        action += '&nbsp;&nbsp;&nbsp;<a href="#"><i class="fa fa-trash-o" style="cursor:pointer;" onclick="delete1(' + row.id + ')" title="删除"></i></a> ';
+        action += '<a href="#"><i class="fa fa-edit" style="cursor:pointer;" onclick="userUpdate(' + row.id + ')" title="修改"></i></a> ';
+        action += '&nbsp;&nbsp;&nbsp;<a href="#"><i class="fa fa-trash-o" style="cursor:pointer;" onclick="userDelete(' + row.id + ')" title="删除"></i></a> ';
 
         return action;
     }
