@@ -7,44 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6522ca73-6226-43f4-8e41-34e3292baf3d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zhang/Exception/UserException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zhang/controller/TeacherController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zhang/model/Teacher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zhang/other/message/UserMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/teacher/teacherUI.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/saveUI.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zhang/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zhang/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zhang/dao/IUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zhang/dao/IUserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zhang/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zhang/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zhang/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zhang/service/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zhang/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zhang/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/message_en_US.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/message_en_US.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/messages_zh_CN.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages_zh_CN.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/user.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zhang/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zhang/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zhang/dao/IUserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zhang/dao/IUserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zhang/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zhang/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zhang/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zhang/service/IUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zhang/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zhang/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UserDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/message_en_US.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/message_en_US.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/messages.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/messages_zh_CN.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/messages_zh_CN.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mvcDemo-1.0-SNAPSHOT/WEB-INF/classes/com/zhang/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvcDemo-1.0-SNAPSHOT/WEB-INF/classes/com/zhang/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mvcDemo-1.0-SNAPSHOT/WEB-INF/classes/com/zhang/dao/IUserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvcDemo-1.0-SNAPSHOT/WEB-INF/classes/com/zhang/dao/IUserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mvcDemo-1.0-SNAPSHOT/WEB-INF/classes/com/zhang/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvcDemo-1.0-SNAPSHOT/WEB-INF/classes/com/zhang/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mvcDemo-1.0-SNAPSHOT/WEB-INF/classes/com/zhang/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvcDemo-1.0-SNAPSHOT/WEB-INF/classes/com/zhang/service/IUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mvcDemo-1.0-SNAPSHOT/WEB-INF/classes/com/zhang/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvcDemo-1.0-SNAPSHOT/WEB-INF/classes/com/zhang/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mvcDemo-1.0-SNAPSHOT/WEB-INF/classes/mapper/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvcDemo-1.0-SNAPSHOT/WEB-INF/classes/mapper/UserDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mvcDemo-1.0-SNAPSHOT/WEB-INF/classes/message_en_US.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvcDemo-1.0-SNAPSHOT/WEB-INF/classes/message_en_US.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mvcDemo-1.0-SNAPSHOT/WEB-INF/classes/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvcDemo-1.0-SNAPSHOT/WEB-INF/classes/messages.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mvcDemo-1.0-SNAPSHOT/WEB-INF/classes/messages_zh_CN.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvcDemo-1.0-SNAPSHOT/WEB-INF/classes/messages_zh_CN.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mvcDemo-1.0-SNAPSHOT/WEB-INF/views/home/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvcDemo-1.0-SNAPSHOT/WEB-INF/views/home/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mvcDemo-1.0-SNAPSHOT/WEB-INF/views/user/user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvcDemo-1.0-SNAPSHOT/WEB-INF/views/user/user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zhang/model/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zhang/model/Teacher.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -193,8 +156,37 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/zhang/model/Teacher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+            <state relative-caret-position="-480">
+              <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+              <folding>
+                <element signature="e#366#367#0" expanded="true" />
+                <element signature="e#400#401#0" expanded="true" />
+                <element signature="e#428#429#0" expanded="true" />
+                <element signature="e#459#460#0" expanded="true" />
+                <element signature="e#486#487#0" expanded="true" />
+                <element signature="e#526#527#0" expanded="true" />
+                <element signature="e#558#559#0" expanded="true" />
+                <element signature="e#588#589#0" expanded="true" />
+                <element signature="e#614#615#0" expanded="true" />
+                <element signature="e#652#653#0" expanded="true" />
+                <element signature="e#682#683#0" expanded="true" />
+                <element signature="e#712#713#0" expanded="true" />
+                <element signature="e#738#739#0" expanded="true" />
+                <element signature="e#776#777#0" expanded="true" />
+                <element signature="e#806#807#0" expanded="true" />
+                <element signature="e#841#842#0" expanded="true" />
+                <element signature="e#872#873#0" expanded="true" />
+                <element signature="e#920#921#0" expanded="true" />
+                <element signature="e#960#961#0" expanded="true" />
+                <element signature="e#993#994#0" expanded="true" />
+                <element signature="e#1022#1023#0" expanded="true" />
+                <element signature="e#1066#1067#0" expanded="true" />
+                <element signature="e#1102#1103#0" expanded="true" />
+                <element signature="e#1134#1135#0" expanded="true" />
+                <element signature="e#1162#1163#0" expanded="true" />
+                <element signature="e#1204#1205#0" expanded="true" />
+                <element signature="e#1238#1239#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -300,7 +292,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1245" />
     <option name="width" value="618" />
     <option name="height" value="1087" />
@@ -534,7 +526,7 @@
     <property name="DatabaseDriversLRU" value="sqlserver" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1567779791419" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1567779795217" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/target/mvcDemo-1.0-SNAPSHOT.war" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -757,12 +749,12 @@
       <workItem from="1567574297881" duration="644000" />
       <workItem from="1567610448266" duration="2059000" />
       <workItem from="1567671778708" duration="13112000" />
-      <workItem from="1567735655453" duration="10645000" />
+      <workItem from="1567735655453" duration="11261000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90732000" />
+    <option name="totallyTimeSpent" value="91348000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1872" height="1096" extended-state="6" />
@@ -1264,8 +1256,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zhang/model/Teacher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+        <state relative-caret-position="-480">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+          <folding>
+            <element signature="e#366#367#0" expanded="true" />
+            <element signature="e#400#401#0" expanded="true" />
+            <element signature="e#428#429#0" expanded="true" />
+            <element signature="e#459#460#0" expanded="true" />
+            <element signature="e#486#487#0" expanded="true" />
+            <element signature="e#526#527#0" expanded="true" />
+            <element signature="e#558#559#0" expanded="true" />
+            <element signature="e#588#589#0" expanded="true" />
+            <element signature="e#614#615#0" expanded="true" />
+            <element signature="e#652#653#0" expanded="true" />
+            <element signature="e#682#683#0" expanded="true" />
+            <element signature="e#712#713#0" expanded="true" />
+            <element signature="e#738#739#0" expanded="true" />
+            <element signature="e#776#777#0" expanded="true" />
+            <element signature="e#806#807#0" expanded="true" />
+            <element signature="e#841#842#0" expanded="true" />
+            <element signature="e#872#873#0" expanded="true" />
+            <element signature="e#920#921#0" expanded="true" />
+            <element signature="e#960#961#0" expanded="true" />
+            <element signature="e#993#994#0" expanded="true" />
+            <element signature="e#1022#1023#0" expanded="true" />
+            <element signature="e#1066#1067#0" expanded="true" />
+            <element signature="e#1102#1103#0" expanded="true" />
+            <element signature="e#1134#1135#0" expanded="true" />
+            <element signature="e#1162#1163#0" expanded="true" />
+            <element signature="e#1204#1205#0" expanded="true" />
+            <element signature="e#1238#1239#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
