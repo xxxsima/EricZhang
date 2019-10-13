@@ -1,9 +1,11 @@
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <body>
 <%--<h2>Hello World!</h2>
 <a href="user/select">user</a>--%>
-<body background="WEB-INF/img/350.jpg">
+<%@ include file="/WEB-INF/public/commons.jspf"%>
+<body >
 
 <form action="${pageContext.request.contextPath}/user/findUserName" method="post">
     <table>
@@ -17,11 +19,26 @@
         </tr>
         <tr >
             <td><input type="submit" value="登录" ></td>
-           <%-- <td><input type="button" value="注册" onclick="window.location.href='/user/regist'"> </td>--%>
+
         </tr>
 
     </table>
 </form>
+<td><button id="add" type="button" onclick="userAdd()">注册</button>
+
+<%--
+    <input type="button" value="注册" onclick="window.location.href=''"> </td>
+--%>
 </body>
-</body>
+<script>
+    function userAdd(){
+        ada.openPopup(window.location.href='/user/regist',
+            function () {
+                window.location.reload()
+            },
+            '800px','600px'
+        )
+
+    }
+</script>
 </html>

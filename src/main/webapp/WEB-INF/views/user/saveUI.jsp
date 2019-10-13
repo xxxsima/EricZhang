@@ -25,70 +25,127 @@
     <div id="app" v-once>
         <input type="hidden" name="id" v-model="id"></input>
 
-
-
-        <div class="input-group" >
+        <div class="input-group">
             <div class="col-3 col-form-label">
-                <label class="formLabel" for="email"><s:message code="user.email"></s:message> </label>
+                <label class="formLabel" for="username"><s:message code="user.username"></s:message></label>
             </div>
             <div class="col-8">
-                <input type="text" class="form-control" id="email" placeholder="<s:message code="user.email.placeholder"></s:message>"
-                       name="email" v-model="email" required  maxlength="20">
+                <input type="text" class="form-control" id="username" placeholder="<s:message code="user.username.placeholder"></s:message>" name="username"
+                       v-model="username" required maxlength="20"/>
                 <div class="invalid-feedback">
-                    <s:message code="user.email"></s:message>
+                    <s:message code="user.username"></s:message>
                 </div>
             </div>
         </div>
 
-        <div class="input-group" >
+
+
+
+        <div class="input-group">
             <div class="col-3 col-form-label">
-                <label class="formLabel" for="username"><s:message code="user.name"></s:message> </label>
+                <label class="formLabel" for="password"><s:message code="user.password"></s:message></label>
             </div>
             <div class="col-8">
-                <input type="text" class="form-control" id="username" placeholder="<s:message code="user.username.placeholder"></s:message>"
-                       name="username" v-model="username" required  maxlength="20">
+                <input type="text" class="form-control" id="password" placeholder="<s:message code="user.password.placeholder"></s:message>" name="password"
+                       v-model="password" required maxlength="20"/>
+                <div class="invalid-feedback">
+                    <s:message code="user.password"></s:message>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <div class="col-3 col-form-label">
+                <label class="formLabel" for="name"><s:message code="user.name"></s:message></label>
+            </div>
+            <div class="col-8">
+                <input type="text" class="form-control" id="name" placeholder="<s:message code="user.name.placeholder"></s:message>" name="name"
+                       v-model="name" required maxlength="20"/>
                 <div class="invalid-feedback">
                     <s:message code="user.name"></s:message>
                 </div>
             </div>
         </div>
 
-        <div class="input-group" >
+        <div class="input-group">
             <div class="col-3 col-form-label">
-                <label class="formLabel" for="role"><s:message code="user.role"></s:message> </label>
+                <label class="formLabel">
+                    <s:message code="user.sex"></s:message>
+                </label>
+            </div>
+
+            <div class="col-8 form-row">
+                <div class="col-auto my-1">
+                    <div class="custom-control custom-radio mr-2">
+                        <input type="radio" class="custom-control-input" id="man"
+                        name="sex" value="1" v-model="sex" />
+                        <label class="custom-control-label" for="man">男</label>
+                    </div>
+                </div>
+                <div class="col-auto my-1">
+                    <div class="custom-control custom-radio mr-2">
+                        <input type="radio" class="custom-control-input" id="woman"
+                        name="sex" value="0" v-model="sex"/>
+                        <label class="custom-control-label" for="woman">女</label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="input-group">
+            <div class="col-3 col-form-label">
+                <label class="formLabel" for="birthday">
+                    <s:message code="user.birthday"></s:message>
+                </label>
             </div>
             <div class="col-8">
-                <input type="text" class="form-control" id="role" placeholder="<s:message code="user.role.placeholder"></s:message>"
-                       name="role" v-model="role" required  maxlength="20">
+                <input type="text" class="form-control" id="birthday" placeholder="yyyy-MM-dd"
+                name="birthday" v-model="birthday" required pattern="\d{4}-\d{2}-\d{2}" />
                 <div class="invalid-feedback">
-                    <s:message code="user.role"></s:message>
+                    <s:message code="user.birthday"></s:message>
                 </div>
             </div>
         </div>
 
-
-        <div class="input-group" >
+        <div class="input-group">
             <div class="col-3 col-form-label">
-                <label class="formLabel" for="mobile"><s:message code="user.mobile"></s:message> </label>
+                <label class="formLabel" for="hobbies">
+                    <s:message code="user.hobbies"></s:message>
+                </label>
             </div>
             <div class="col-8">
-                <input type="text" class="form-control" id="mobile" placeholder="<s:message code="user.mobile.placeholder"></s:message>"
-                       name="mobile" v-model="mobile" required  maxlength="20">
-                <div class="invalid-feedback">
-                    <s:message code="user.mobile"></s:message>
-                </div>
+                <select class="form-control" id="hobbies" name="hobbies" v-model="hobbies">
+                    <option value="" selected>请选择</option>
+                    <option value="唱歌">唱歌</option>
+                    <option value="跳舞">跳舞</option>
+                    <option value="跑步">跑步</option>
+                    <option value="游泳">游泳</option>
+                    <option value="旅行">旅行</option>
+                </select>
             </div>
         </div>
 
-        <div class="input-group" >
+        <div class="input-group">
             <div class="col-3 col-form-label">
-                <label class="formLabel" for="password"><s:message code="user.password"></s:message> </label>
+                <label class="formLabel">
+                    <s:message code="user.valid"></s:message>
+                </label>
             </div>
-            <div class="col-8">
-                <input type="text" class="form-control" id="password" placeholder="<s:message code="user.password.placeholder"></s:message>"
-                       name="password" v-model="password" required  maxlength="20">
-                <div class="invalid-feedback">
-                    <s:message code="user.password"></s:message>
+            <div class="col-8 form-row">
+                <div class="col-auto my-1">
+                    <div class="custom-control custom-radio mr-2">
+                        <input type="radio" class="custom-control-input" id="start"
+                        name="valid" value="1" v-model="valid"/>
+                        <label class="custom-control-label" for="start">启用</label>
+                    </div>
+                </div>
+                <div class="col-auto my-1">
+                    <div class="custom-control custom-radio mr-2">
+                        <input type="radio" class="custom-control-input" id="disable"
+                        name="valid" value="0" v-model="valid"/>
+                        <label class="custom-control-label" for="disable">禁用</label>
+                    </div>
                 </div>
             </div>
         </div>
@@ -103,9 +160,9 @@
             </div>
         </div>
     </div>
-
     </div>
 </form>
+
 <script>
     "use strict"; // 使用严格模式
     $(document).ready(function(){
@@ -114,13 +171,18 @@
         app.vm = new Vue({
             el: '#app',
             data: {
-                email: "${u.email}",
-                username: "${u.username}",
-                role: "${u.role}",
-                mobile:"${u.mobile}",
+                username:"${u.username}",
                 password:"${u.password}",
-                id:"${u.id}"
+                name:"${u.name}",
+                sex:"${u.sex}",
+                birthday:"<fmt:formatDate value='${u.birthday}' pattern='yyyy-MM-dd' />",
+                hobbies:"${u.hobbies}",
+                id:"${u.id}",
+                valid:"${u.valid}"
             }
+        });
+        $("#birthday").datepicker({
+            dateFormat:'yy-mm-dd'
         });
 
         <c:choose>

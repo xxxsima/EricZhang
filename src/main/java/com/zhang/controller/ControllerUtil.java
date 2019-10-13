@@ -18,7 +18,7 @@ public class ControllerUtil {
     public static int DEFAULT_PAGE_SIZE = 10;
     public static int MAX_PAGE_SIZE = 500;
 
-    public static String SUCCESS = "success";
+    public static String SUCCESS = "chenggong";
     public static String MESSAGE = "message";
     public static String DATA = "data";
 

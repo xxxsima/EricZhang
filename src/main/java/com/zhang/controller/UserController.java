@@ -1,6 +1,5 @@
 package com.zhang.controller;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.zhang.Exception.UserException;
 import com.zhang.model.User;
 import com.zhang.service.IUserService;
@@ -16,18 +15,14 @@ import org.springframework.web.servlet.ModelAndView;
 import org.apache.commons.lang.StringEscapeUtils;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import sun.nio.cs.ext.GB18030;
 
-import javax.management.relation.Role;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 
 @Controller
 @RequestMapping("/user")
-public class UserController {
-
+public class UserController  extends ControllerUtil{
     @Autowired
     private IUserService userService;
 
@@ -36,12 +31,19 @@ public class UserController {
         return "home/index";
     }
 
+    /*
+    * 注册
+    * */
+    @RequestMapping("/regist")
+
+    public String regist(Model model) {
+                return "user/regist";
+    }
+
     @RequestMapping("/findUserName")
     @ResponseBody
-    public ModelAndView checkLogin(User user,Model model) {
+    public ModelAndView checkLogin( User user,Model model) {
         System.out.println(user.getPassword());
-       // List<User>  user2=  userService.findAll();
-        //System.out.println(user2);
         String username = user.getUsername();
         String password = user.getPassword();
 
@@ -49,8 +51,6 @@ public class UserController {
         ModelAndView modelAndView=new ModelAndView();
 
         if (user !=null) {
-           // model.addAttribute("user",user);
-                      //modelAndView.addObject("user",user);
             modelAndView.setViewName("home/home");
             return modelAndView;
         }
@@ -58,15 +58,6 @@ public class UserController {
         return modelAndView;
     }
 
-/*
-    @RequestMapping("/select")
-    public ModelAndView selectUser() throws Exception {
-        ModelAndView mv = new ModelAndView();
-        User user = (User) userService.selectUser(1);
-        mv.addObject("user", user);
-        mv.setViewName("user/user");
-        return mv;
-*/
     @RequestMapping("/userUI")
     public String userUI() {
         return "user/user";
@@ -89,8 +80,10 @@ public class UserController {
             pageSize = ControllerUtil.checkPageSize(pageSize);
             fuzzy = StringEscapeUtils.escapeHtml(fuzzy);
             PageHelper.startPage(pageNum, pageSize);
-            List<User> users = userService.fuzzyQuery(fuzzy);
+            List<User> users = userService.fuzzyQuery(fuzzy,pageNum,pageSize);
             PageInfo<User> pageInfo = new PageInfo<User>(users);
+             Integer count=userService.findCount(fuzzy);
+            pageInfo.setTotal(count);
             return ControllerUtil.generatePageInfoMap(pageInfo);
         }
         catch (Exception e)
@@ -112,6 +105,10 @@ if (e instanceof BaseBusinessException) {
     public String addUI()  throws Exception{
     return "user/saveUI";
 }
+
+/*
+* 主页
+* */
 /*
 * updateUI
 * */
@@ -131,9 +128,15 @@ return "user/saveUI";
     System.out.println(user);
     try {
         if (user.getId() == null) {
+            user.setInsertTime(new Date());
+            user.setUpdateTime(new Date());
             userService.insert(user);
         }
+        ModelAndView modelAndView=new ModelAndView();
+        modelAndView.setViewName("home/index");
+
         return ControllerUtil.generateSuccessResponseMap("保存成功");
+
     }catch (BaseBusinessException e) {
         if (e instanceof UserException) {
             return ControllerUtil.generateFailureResponseMap("保存失败");
@@ -156,6 +159,8 @@ return "user/saveUI";
     public Map<String,Object> updateJson(@RequestBody() User user) {
     try {
         if (user.getId() != null) {
+
+            user.setUpdateTime(new Date());
             userService.update(user);
         }
         return ControllerUtil.generateSuccessResponseMap("修改成功");
@@ -168,15 +173,14 @@ return "user/saveUI";
 }
 
 @RequestMapping("/deleteJson")
-/*
-* delete
-* User
-* */
+
 @ResponseBody
 public  Map<String,Object> deleteJson(@RequestParam() Long id) throws Exception {
     if (id !=null) {
         try {
-            userService.delete(id);
+            User user=userService.getById(id);
+            user.setValid(0);
+            userService.update(user);
             return ControllerUtil.generateSuccessResponseMap("删除成功");
         }
         catch (BaseBusinessException e) {
@@ -189,5 +193,29 @@ public  Map<String,Object> deleteJson(@RequestParam() Long id) throws Exception 
     else  {
         return ControllerUtil.generateFailureResponseMap("No user Id was obtained ");
     }
+}
+
+@RequestMapping(value = "/checkJson")
+
+    @ResponseBody
+    public  Map<String,Object> checkJson(@RequestParam()String username) throws Exception {
+
+    System.out.println(username);
+
+    if (username !=null) {
+       List<User> users= userService.checkUsername(username);
+       if (users.size()>0) {
+           Map<String,Object> map = new HashMap<String, Object>();
+           map.put("result",false);
+           map.put("message","用户名已存在!");
+           return map;
+       } else {
+           Map<String,Object> map = new HashMap<String, Object>();
+           map.put("result",true);
+           map.put("message","用户名通过验证!");
+           return map;
+       }
+    }
+    return null;
 }
 }

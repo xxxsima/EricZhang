@@ -105,29 +105,8 @@
                     width: 1,
                     align: 'center',
                     resizable: true,
-                    field: 'email',
-                    title: '<s:message code="user.email"></s:message>'
-                },
-                {
-                    width: 1,
-                    align: 'center',
-                    resizable: true,
                     field: 'username',
-                    title: '<s:message code="user.name"></s:message>'
-                },
-                {
-                    width: 1,
-                    align: 'center',
-                    resizable: true,
-                    field: 'role',
-                    title: '<s:message code="user.role"></s:message>'
-                },
-                {
-                    width: 1,
-                    align: 'center',
-                    resizable: true,
-                    field: 'mobile',
-                    title: '<s:message code="user.mobile"></s:message>'
+                    title: '<s:message code="user.username"></s:message>'
                 },
                 {
                     width: 1,
@@ -135,6 +114,79 @@
                     resizable: true,
                     field: 'password',
                     title: '<s:message code="user.password"></s:message>'
+                },
+                {
+                    width: 1,
+                    align: 'center',
+                    resizable: true,
+                    field: 'name',
+                    title: '<s:message code="name"></s:message>'
+                },
+                {
+                    width: 1,
+                    align: 'center',
+                    resizable: true,
+                    field: 'sex',
+                    title: '<s:message code="user.sex"></s:message>',
+                    formatter:      function(value, row, index){
+
+                         if (value==true) {
+                             var e='<s:message code="user.man"></s:message>';
+                             return e;
+                         } else {
+                             var e='<s:message code="user.woman"></s:message>';
+                             return e;
+                         }
+                    }
+                },
+                {
+                    width: 1,
+                    align: 'center',
+                    resizable: true,
+                    field: 'birthday',
+                    title: '<s:message code="user.birthday"></s:message>'
+                },
+                {
+                    width: 1,
+                    align: 'center',
+                    resizable: true,
+                    field: 'hobbies',
+                    title: '<s:message code="user.hobbies"></s:message>'
+                },
+
+                {
+                    width: 1,
+                    align: 'center',
+                    resizable: true,
+                    field: 'insertTime',
+                    title: '<s:message code="user.insertTime"></s:message>'
+                },
+
+                {
+                    width: 1,
+                    align: 'center',
+                    resizable: true,
+                    field: 'updateTime',
+                    title: '<s:message code="user.updateTime"></s:message>'
+                },
+
+                {
+                    width: 1,
+                    align: 'center',
+                    resizable: true,
+                    field: 'valid',
+                    title: '<s:message code="user.valid"></s:message>',
+                    formatter: function (value,row,index) {
+
+
+                        if (value==true) {
+                            var e='<s:message code="user.start"></s:message>';
+                            return e;
+                        } else {
+                            var e='<s:message code="user.disable"></s:message>';
+                            return e;
+                        }
+                    }
                 },
                 {
                     width: 1,
@@ -158,7 +210,7 @@
 
     function searchUserList() {
         var params = {};
-        params.fuzzy = $('#fuzzyString').val();
+        params.fuzzy = $('#userFuzzyString').val();
         $('#dg').datagrid("options").queryParams = params;
         $('#dg').datagrid("options").url='${pageContext.request.contextPath}/user/select';
         $("#dg").datagrid("load")
@@ -193,7 +245,8 @@
 
     }
     function actionFormatter(value, row, index) {
-
+        //var valid=${row.valid};
+        //console.log(valid);
         var action = "";
         action += '<a href="#"><i class="fa fa-edit" style="cursor:pointer;" onclick="userUpdate(' + row.id + ')" title="修改"></i></a> ';
         action += '&nbsp;&nbsp;&nbsp;<a href="#"><i class="fa fa-trash-o" style="cursor:pointer;" onclick="userDelete(' + row.id + ')" title="删除"></i></a> ';

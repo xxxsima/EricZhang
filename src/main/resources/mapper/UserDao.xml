@@ -8,25 +8,53 @@
         SELECT * FROM z_user WHERE id = #{id}
     </select>
     <select id ="findAll" resultType="User">
-        select * from z_user
+        select * from  z_user
     </select>
 
     <select id="findUserName" resultType="User" parameterType="String">
-    select * from z_user where username=#{username}
+    select top 1 * from z_user where username=#{username}
     </select>
 
-    <select id="fuzzyQuery" parameterType="String" resultType="User">
-        select * from z_user u
-        <if test="_parameter != null and _parameter != ''">
-            where u.username like concat('%',#{fuzzy},'%')
+    <select id="findCount" parameterType="String" resultType="Integer">
+        select count (*) from z_user as  u
+        <if test=" fuzzy != null and fuzzy != ''">
+            where  (u.username like concat('%',#{fuzzy},'%')
             or
-            u.role like concat ('%',#{fuzzy},'%')
+            u.name like concat ('%',#{fuzzy},'%')
+            or
+            u.sex like concat('%',#{fuzzy},'%'))
         </if>
+
+    </select>
+
+    <select id="fuzzyQuery" parameterType="java.util.Map" resultType="User">
+        select top ${pageSize} * from z_user
+        as u
+         where
+          u.id
+          not in
+         (select top ((${pageNum}-1) * ${pageSize}) id from z_user ORDER BY id ASC)
+        <if test=" fuzzy != null and fuzzy != ''">
+            and (u.username like concat('%',#{fuzzy},'%')
+            or
+            u.name like concat ('%',#{fuzzy},'%')
+            or
+            u.sex like concat('%',#{fuzzy},'%'))
+        </if>
+
+        ORDER BY id
 
     </select>
 
 
     <select id="exitContactBy" resultType="User">
+        select * from z_user u
+        where u.username=#{username}
+    </select>
+
+
+
+    <select id="checkUserName" resultType="User">
         select * from z_user u
         where u.username=#{username}
     </select>
@@ -37,31 +65,43 @@
     <insert id="insert" parameterType="User" useGeneratedKeys="true" keyProperty="id">
         insert into z_user
         (
-        email,
         username,
-        role,
-        mobile,
-        password
+        password,
+        name,
+        sex,
+        birthday,
+        hobbies,
+        insertTime,
+        updateTime,
+        valid
         )
         values
         (
-        #{email},
         #{username},
-        #{role},
-        #{mobile},
-        #{password}
+        #{password},
+        #{name},
+        #{sex},
+        #{birthday},
+        #{hobbies},
+        #{insertTime},
+        #{updateTime},
+        #{valid}
         )
     </insert>
     <update id="update" parameterType="User">
         update z_user set
-        email=#{email},
         username=#{username},
-        role=#{role},
-        mobile=#{mobile},
-        password=#{password}
+        password=#{password},
+        name=#{name},
+        sex=#{sex},
+        birthday=#{birthday},
+        hobbies=#{hobbies},
+        updateTime=#{updateTime},
+        valid=#{valid}
         where id=#{id}
     </update>
-    <delete id="delete" parameterType="Long">
-        delete from z_user where id=#{id}
+    <delete id ="delete" parameterType="User">
+        update z_user set valid=#{valid} where id=#{id}
     </delete>
+
 </mapper>
