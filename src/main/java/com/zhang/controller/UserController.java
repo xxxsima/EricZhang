@@ -84,7 +84,12 @@ public class UserController  extends ControllerUtil{
             PageInfo<User> pageInfo = new PageInfo<User>(users);
              Integer count=userService.findCount(fuzzy);
             pageInfo.setTotal(count);
-            return ControllerUtil.generatePageInfoMap(pageInfo);
+            Map<String,Object> map = new HashMap<String, Object>();
+            map.put(SUCCESS,true);
+            map.put(MESSAGE,"OK");
+            map.put("rows",pageInfo.getList());
+            map.put("total", pageInfo.getTotal());
+            return map;
         }
         catch (Exception e)
         {
