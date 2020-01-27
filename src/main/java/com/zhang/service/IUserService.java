@@ -13,8 +13,7 @@ public interface IUserService {
       List<User> findAll();
       User findUserName(String username,String password);
 
-      List<
-              User> fuzzyQuery(@Param(value = "fuzzy") String fuzzy,@Param(value = "pageNum") Integer pageNum,@Param(value = "pageSize") Integer pageSize);
+      List<User> fuzzyQuery(@Param(value = "fuzzy") String fuzzy,@Param(value = "pageNum") Integer pageNum,@Param(value = "pageSize") Integer pageSize);
       User getById(Long id);
       /*
       * insert

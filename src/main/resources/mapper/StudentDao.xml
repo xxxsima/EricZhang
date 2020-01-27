@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhang.dao.StudentDao">
+    <select id="findAll" resultType="Student">
+        select * from z_student
+    </select>
+
+    <select id="findCount" parameterType="String" resultType="Integer">
+        select count (*) from z_student as s
+        <if test="fuzzy != null and fuzzy != ''">
+            where
+            (
+            s.studentName like  concat('%',#{fuzzy},'%')
+            or
+            s.sex  like concat('%',#{fuzzy},'%')
+            or
+            s.birthday like concat('%',#{fuzzy},'%')
+            or
+            s.telephone like concat('%',#{fuzzy},'%')
+            or
+            s.wchar like concat('%',#{fuzzy},'%')
+            or
+            s.homeAddress like concat('%',#{fuzzy},'%')
+            or
+            s.fatherName like concat('%',#{fuzzy},'%')
+            or
+            s.telephone like concat('%',#{fuzzy},'%')
+            or
+            s.telephone1 like concat('%',#{fuzzy},'%')
+            or
+            s.grade like concat('%',#{fuzzy},'%')
+
+            )
+            and s.classId=#{classId}
+        </if>
+
+    </select>
+
+    <select id="fuzzyQuery" resultType="java.util.Map" parameterType="Student">
+        select top ${pageSize} * from z_student as s
+        where s.id
+        not in
+        (select top ((${pageNum}-1) * ${pageSize} ) id from z_student order by id asc )
+        <if test="fuzzy != null and fuzzy != ''">
+            and
+            s.studentName like  concat('%',#{fuzzy},'%')
+            or
+            s.sex  like concat('%',#{fuzzy},'%')
+            or
+            s.birthday like concat('%',#{fuzzy},'%')
+            or
+            s.telephone like concat('%',#{fuzzy},'%')
+            or
+            s.wchar like concat('%',#{fuzzy},'%')
+            or
+            s.homeAddress like concat('%',#{fuzzy},'%')
+            or
+            s.fatherName like concat('%',#{fuzzy},'%')
+            or
+            s.telephone like concat('%',#{fuzzy},'%')
+            or
+            s.telephone1 like concat('%',#{fuzzy},'%')
+            or
+            s.grade like concat('%',#{fuzzy},'%')
+        </if>
+        and s.classId=#{classId}
+        order by id
+    </select>
+
+    <select id="exitContactBy" resultType="Student">
+        select * from z_student  as s where s.studentName =#{studentName}
+    </select>
+
+    <select id="getById" parameterType="Long" resultType="Student">
+        select * from z_student as s where s.id=#{id}
+    </select>
+
+
+    <insert id="insert" parameterType="Student" useGeneratedKeys="true" keyProperty="id">
+        insert into z_student  (
+        classId,
+        studentName,
+        sex,
+        birthday,
+        telephone,
+        wchar,
+        homeAddress,
+        fatherName,
+        telephone1,
+        grade
+        )
+        values
+
+      ( #{classId},
+        #{studentName},
+        #{sex},
+        #{birthday},
+        #{telephone},
+        #{wchar},
+        #{homeAddress},
+        #{fatherName},
+        #{telephone1},
+        #{grade})
+    </insert>
+
+    <update id="update" parameterType="Student">
+        update z_student set
+        studentName =#{studentName},
+        sex=#{sex},
+        birthday=#{birthday},
+        telephone=#{telephone},
+        wchar=#{wchar},
+        homeAddress=#{homeAddress},
+        fatherName=#{fatherName},
+        telephone1=#{telephone1},
+        grade=#{grade}
+        where id =#{id}
+    </update>
+
+    <delete id="delete" parameterType="Student">
+        delete z_student where id=#{id}
+    </delete>
+</mapper>

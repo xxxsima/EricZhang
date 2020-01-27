@@ -209,7 +209,7 @@ ada.ajaxDelete = function (url, successFunc) {
             }
         },
         error: function (e) {
-            console.dir(e);
+            /*console.dir(e);*/
             toastr.clear();
             toastr.error("Exception!");
         }
@@ -240,7 +240,7 @@ ada.bindSubmit = function (formId,url,isSave,multiToString) {
 
 ada.bindSubmitWithArrayFields = function (formId,url,isSave,arrayFields) {
     var jQueryForm = $("#" + formId);
-     // console.dir("1234");
+    // console.dir("1234");
     jQueryForm.submit(function (e) {
         // console.log(e);
 

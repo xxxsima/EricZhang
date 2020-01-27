@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhang.dao.FunctionDao">
+    <sql id="selectFrom">
+      select * from z_function as f
+    </sql>
+    <select id="findAll" resultType="Function">
+        select * from z_function
+    </select>
+
+    <select id="getById" resultType="Function" parameterType="Long">
+        <include refid="selectFrom"/>
+        where f.id=#{id}
+    </select>
+
+    <select id="weight" resultType="Function">
+        <include refid="selectFrom"/>
+        where f.name=#{name}
+    </select>
+
+    <select id="fuzzyQuery" resultType="java.util.Map" parameterType="String">
+        select top ${pageSize} * from z_function as f where
+        f.id not in
+        (select top((${pageNum}-1) * ${pageSize} )id from z_function order  by id asc )
+        <if test="fuzzy != null and fuzzy != ''">
+            and (
+            f.code like concat ('%',#{fuzzy},'%')
+            or
+            f. name like concat('%',#{fuzzy},'%')
+            or
+            f.displayName like concat('%',#{fuzzy},'%')
+            )
+        </if>
+
+        order  by id
+
+    </select>
+
+    <select id="findCount" parameterType="String" resultType="Integer">
+        select count (*) from z_function as  f
+        <if test=" fuzzy != null and fuzzy != ''">
+            where  (
+            f.code like concat ('%',#{fuzzy},'%')
+            or
+            f. name like concat('%',#{fuzzy},'%')
+            or
+            f.displayName like concat('%',#{fuzzy},'%')
+        </if>
+
+    </select>
+
+    <insert id="insert" parameterType="Function" useGeneratedKeys="true" keyProperty="id">
+        insert  into z_function
+        (
+          code,
+          name,
+          displayName,
+          position,
+          ioc,
+          platform,
+          remark,
+          runConfig,
+          parentId,
+          icon,
+          readOnly
+        )
+        values
+        (
+          #{code},
+          #{name},
+          #{displayName},
+          #{position},
+          #{ioc},
+          #{platform},
+          #{remark},
+          #{runConfig},
+          #{parentId},
+          #{icon},
+          #{readOnly}
+        )
+    </insert>
+    <update id="update" parameterType="Function">
+        update z_function set
+          code=#{code},
+          name=#{name},
+          displayName=#{displayName},
+          position=#{position},
+          ioc=#{ioc},
+          platform=#{platform},
+          remark=#{remark},
+          runConfig=#{runConfig},
+          parentId=#{parentId},
+          icon=#{icon},
+          readOnly=#{readOnly}
+          where id=#{id}
+    </update>
+    <delete id="delete" parameterType="Function" >
+        delete from z_function where id=#{id}
+    </delete>
+</mapper>

@@ -223,12 +223,12 @@
         },
         '800px','600px');
          }
-    function userDelete(userId){
+    function userDelete(id){
 
 
-        ada.ajaxDelete("${pageContext.request.contextPath}/user/deleteJson?id="+userId,
+        ada.ajaxDelete("${pageContext.request.contextPath}/user/deleteJson?id=" + id,
             function () {
-                searchUserList();
+               window.location.reload()
             }
         );
     }
@@ -250,6 +250,7 @@
         var action = "";
         action += '<a href="#"><i class="fa fa-edit" style="cursor:pointer;" onclick="userUpdate(' + row.id + ')" title="修改"></i></a> ';
         action += '&nbsp;&nbsp;&nbsp;<a href="#"><i class="fa fa-trash-o" style="cursor:pointer;" onclick="userDelete(' + row.id + ')" title="删除"></i></a> ';
+
 
         return action;
     }

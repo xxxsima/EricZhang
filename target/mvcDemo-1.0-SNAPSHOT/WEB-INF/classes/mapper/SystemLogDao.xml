@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhang.dao.SystemLogDao">
+    <select id="findAll" resultType="SystemLog">
+        select * from z_systemLog
+    </select>
+
+    <select id="findCount" parameterType="String" resultType="Integer">
+        select count (*) from z_systemLog as s
+        <if test="fuzzy != null and fuzzy != ''">
+            where
+            (s.userName like concat('%',#{fuzzy},'%')
+
+            or
+            s.types like concat('%',#{fuzzy},'%')
+
+            or
+            s.role like concat('%',#{fuzzy},'%')
+
+            or
+            s.modules like concat('%',#{fuzzy},'%')
+            )
+        </if>
+
+    </select>
+
+    <select id="fuzzyQuery" parameterType="java.util.Map" resultType="SystemLog">
+        select top ${pageSize} * from  z_systemLog
+        as s
+        where s.id
+        not in
+        (select top ((${pageNum}-1) * ${pageSize}) id from z_systemLog order  by id asc)
+        <if test="fuzzy != null and fuzzy != ''">
+            and
+            (
+            (s.userName like concat('%',#{fuzzy},'%')
+
+            or
+            s.types like concat('%',#{fuzzy},'%')
+
+            or
+            s.role like concat('%',#{fuzzy},'%')
+
+            or
+            s.modules like concat('%',#{fuzzy},'%')
+
+            )
+        </if>
+
+        order by id
+    </select>
+
+    <select id="getById" resultType="SystemLog" parameterType="Long">
+        select * from z_systemLog as s where s.id=#{id}
+    </select>
+
+    <insert id="save" parameterType="SystemLog" useGeneratedKeys="true" keyProperty="id">
+        insert  into z_systemLog
+        (
+        modules, types,  userName, actionTime, actionContext
+        ) values
+        (#{modules},#{types},#{userName},#{actionTime},#{actionContext})
+
+    </insert>
+</mapper>

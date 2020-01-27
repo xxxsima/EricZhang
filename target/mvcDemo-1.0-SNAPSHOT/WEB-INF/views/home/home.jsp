@@ -16,6 +16,50 @@
 <input  type="button" value="user" onclick="window.location.href='/user/userUI'">
 <br>
 
+<br>
+
+
+
+<input type="button" value="function" onclick="window.location.href='/function/functionUI'">
+<br>
+
+<br>
+
+
+
+<input type="button" value="role" onclick="window.location.href='/role/roleUI'">
+<br>
+
+<br>
+
+
+<input type="button" value="product" onclick="window.location.href='/product/productUI'">
+<br>
+
+<br>
+
+
+<input type="button" value="systemLog" onclick="window.location.href='/systemLog/listUI'">
+<br>
+
+<br>
+
+<input type="button" value="class" onclick="window.location.href='/class/listUI'">
+<br>
+
+<br>
+
+<input type="button" value="student" onclick="window.location.href='/student/listUI1'">
+<br>
+
+<br>
+
+
+
+
+
+
+
 
 <form action="${pageContext.request.contextPath}/user/login">
     <table>

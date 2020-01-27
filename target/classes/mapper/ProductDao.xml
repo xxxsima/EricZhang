@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhang.dao.ProductDao">
+    <select id="findAll" resultType="Product">
+        select * from z_product
+    </select>
+
+    <select id="findCont" parameterType="String" resultType="Integer">
+        select count(*) from z_product as p
+        <if test="fuzzy !=null and fuzzy !=''">
+            where (
+            p.productName like concat('%',#{fuzzy},'%')
+            or
+            p.pleaceOfProduction like concat('%',#{fuzzy},'%')
+            or
+            p.nutritive like concat('%',#{fuzzy},'%')
+            )
+        </if>
+
+    </select>
+
+    <select id="fuzzyString" parameterType="java.util.Map" resultType="Product">
+        select top ${pageSize} * from z_product
+        as p
+        where
+         p.id
+         not in
+         (select top ((${pageNum}-1)* ${pageSize}) id from z_product order by id asc)
+        <if test="fuzzy != null and fuzzy !=''">
+            and
+            (
+            p.productName like concat('%',#{fuzzy},'%')
+            or
+            p.pleaceOfProduction like concat('%',#{fuzzy},'%')
+            or
+            p.nutritive like concat('%',#{fuzzy},'%')
+            )
+        </if>
+        order by id
+    </select>
+
+    <select id="exitContactBy" resultType="Product">
+        select * from z_product as p where  p.productName =#{productName}
+    </select>
+
+    <select id="getById" resultType="Product" parameterType="Long">
+        select * from z_product  as p where p.id = #{id}
+    </select>
+
+    <insert id="insert" parameterType="Product" useGeneratedKeys="true" keyProperty="id">
+        insert into z_product
+        (productName,
+        pleaceOfProduction,
+        nutritive,
+        logo,
+        createTime,
+        updateTime
+        )
+        values
+        (
+        #{productName},
+        #{pleaceOfProduction},
+        #{nutritive},
+        #{logo},
+        #{createTime},
+        #{updateTime}
+        )
+    </insert>
+    <update id="update" parameterType="Product">
+        update z_product set
+        productName=#{productName},
+        pleaceOfProduction=#{pleaceOfProduction},
+        nutritive=#{nutritive},
+        logo=#{logo},
+        updateTime=#{updateTime}
+        where  id=#{id}
+    </update>
+    <delete id="delete" parameterType="Product">
+        delete z_product where id=#{id}
+    </delete>
+</mapper>
+

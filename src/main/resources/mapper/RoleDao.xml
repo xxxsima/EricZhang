@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhang.dao.RoleDao">
+    <select id="findAll" resultType="Role">
+        select * from z_role
+    </select>
+
+
+    <select id="findCount" parameterType="String" resultType="Integer">
+        select count (*) from z_role as r
+        <if test="fuzzy != null and fuzzy !=''">
+            where
+            (
+            r.name like concat('%',#{fuzzy},'%')
+            or
+            r.code like concat('%',#{fuzzy},'%')
+            )
+        </if>
+    </select>
+
+
+    <select id="fuzzyQuery" parameterType="java.util.Map" resultType="Role">
+        select top ${pageSize} * from z_role
+        as u
+        where
+        u.id
+        not in
+        (select top ((${pageNum}-1) * ${pageSize}) id from z_role ORDER BY id ASC)
+        <if test=" fuzzy != null and fuzzy != ''">
+            and (
+            u.name like concat('%',#{fuzzy},'%')
+            or
+            u.code like concat ('%',#{fuzzy},'%')
+            )
+        </if>
+
+        ORDER BY id
+
+    </select>
+
+    <select  id ="exitContactBy" resultType="Role">
+
+    select * from z_role as r  where  r.name =#{name}
+  </select>
+
+<select id="getById" parameterType="Long" resultType="Role">
+        select * from z_role  as r where r.id =#{id}
+    </select>
+    <insert id="insert" parameterType="Role" useGeneratedKeys="true" keyProperty="id">
+        insert into z_role
+        (
+        code,
+        name ,
+        remark
+        )values
+        (
+        #{code},
+        #{name},
+        #{remark}
+        )
+
+    </insert>
+
+    <update id="update" parameterType="Role">
+        update z_role set
+          code =#{code},
+          name =#{name},
+          remark=#{remark}
+          where id =#{id}
+    </update>
+    <delete id="delete" parameterType="Role">
+        delete z_role where id=#{id}
+    </delete>
+
+
+
+</mapper>
