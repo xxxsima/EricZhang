@@ -22,7 +22,7 @@ public class StudentServiceImpl  implements StudentService {
     private StudentDao studentDao;
     @Override
     public void insert(Student entity) {
-        if((entity.getId()==null && exitcontactBy(entity.getStudentName()))) {
+        if((entity.getId()==null && exitContactBy(entity.getStudentName()))) {
             throw  new StudentException(StudentMessage.NAME_VERIFY);
         }
         studentDao.insert(entity);
@@ -70,7 +70,7 @@ public class StudentServiceImpl  implements StudentService {
         return studentDao.findClassId(id,studentId);
     }
 
-    private boolean exitcontactBy(String studentName) {
+    private boolean exitContactBy(String studentName) {
         return studentDao.exitContactBy(studentName).size()>0;
     }
 }

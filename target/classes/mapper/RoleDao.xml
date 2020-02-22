@@ -40,7 +40,7 @@
 
     <select  id ="exitContactBy" resultType="Role">
 
-    select * from z_role as r  where  r.name =#{name}
+      select * from z_role as r  where  r.name =#{name}
   </select>
 
 <select id="getById" parameterType="Long" resultType="Role">

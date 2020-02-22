@@ -75,12 +75,13 @@ Long classId=null;
                 e.printStackTrace();
                 throw e;
             }
+
         }
     }
 
     @RequestMapping("/addUI")
     public String addUI()throws Exception {
-        return "student/saveUI";
+         return "student/saveUI";
     }
 
     @RequestMapping("/updateUI")
